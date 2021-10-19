@@ -15,7 +15,10 @@ class CreateChaptersTable extends Migration
     {
         Schema::create('chapters', function (Blueprint $table) {
             $table->id();
+            $table->string('title')->nullable();
+            $table->json('content')->nullable();
             $table->timestamps();
+            $table->unsignedBigInteger('updated_by')->nullable()->comment('Updated by users id');
         });
     }
 

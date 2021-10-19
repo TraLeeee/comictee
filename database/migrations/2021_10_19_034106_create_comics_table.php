@@ -17,8 +17,13 @@ class CreateComicsTable extends Migration
             $table->id();
             $table->string('title')->nullable();
             $table->string('description')->nullable();
-            $table->
+            $table->string('cover_image')->nullable()->comment('Image of comic');
+            $table->string('thumbnail')->nullable()->comment('Thumbnail of comic');
+            $table->unsignedBigInteger('user_id')->nullable()->comment('Member who post this comic');
+            $table->unsignedBigInteger('translation_team_id')->comment('Comic translate by team id (translation_teams table)')->nullable();
+            $table->unsignedBigInteger('author_id')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

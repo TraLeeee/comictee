@@ -3,11 +3,10 @@
 namespace App\Models;
 
 use Jenssegers\Mongodb\Eloquent\Model;
-use Jenssegers\Mongodb\Eloquent\SoftDeletes;
 
-class Chapter extends Model
+class Author extends Model
 {
-    use SoftDeletes;
-
     protected $connection = 'mongodb';
+
+    protected $fillable = ['name', 'description'];
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTranslationTeamMembersTable extends Migration
+class CreateAuthorsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateTranslationTeamMembersTable extends Migration
      */
     public function up()
     {
-        Schema::create('translation_team_members', function (Blueprint $table) {
+        Schema::create('authors', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('member_id')->comment('id of member on users table');
-            $table->string('title')->nullable()->comment('Custom title for member');
+            $table->string('name')->nullable();
+            $table->string('description')->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateTranslationTeamMembersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('translation_team_members');
+        Schema::dropIfExists('authors');
     }
 }
