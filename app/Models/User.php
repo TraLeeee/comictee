@@ -2,12 +2,13 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Jenssegers\Mongodb\Auth\User as Authenticatable;
 use Jenssegers\Mongodb\Eloquent\SoftDeletes;
 
 class User extends Authenticatable
 {
-    use SoftDeletes;
+    use SoftDeletes, HasFactory;
 
     /**
      * The attributes that are mass assignable.
@@ -42,4 +43,14 @@ class User extends Authenticatable
     protected $dates = ['deleted_at'];
 
     protected $connection = 'mongodb';
+
+    public function comics()
+    {
+        return $this->hasMany(Comic::class);
+    }
+
+    public function translationTeam()
+    {
+        return $this->belongsTo(TranslationTeam::class);
+    }
 }

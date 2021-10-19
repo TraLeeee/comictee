@@ -1,0 +1,12 @@
+/* ./resources/css/app.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn {
+    @apply px-4 py-2 rounded font-semibold bg-gray-200 text-black;
+}
+
+.card {
+    @apply p-4 bg-white shadow rounded;
+}

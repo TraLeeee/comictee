@@ -19,8 +19,8 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->tinyInteger('role')->comment('1: Admin | 2: Moderator | 3: TranslationTeam | 4: NormalUser')->default(4);
-            $table->string('avatar')->comment('Only accept store url of jpg,png,gif');
+            $table->tinyInteger('role')->comment('1: Admin | 2: Moderator | 3: TranslationTeam | 4: NormalUser')->default(config('constants.role.member'));
+            $table->string('avatar')->nullable()->comment('Only accept store url of jpg,png,gif');
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();

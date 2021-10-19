@@ -9,10 +9,12 @@
         "prod": "npm run production",
         "production": "mix --production"
     },
-    "devDependencies": {
-        "axios": "^0.21",
-        "laravel-mix": "^6.0.6",
-        "lodash": "^4.17.19",
-        "postcss": "^8.1.14"
+    "dependencies": {
+        "autoprefixer": "^10.3.7",
+        "laravel-mix": "^6.0.34",
+        "lodash": "^4.17.21",
+        "postcss": "^8.3.9",
+        "postcss-import": "^14.0.2",
+        "tailwindcss": "^2.2.17"
     }
 }
